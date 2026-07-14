@@ -1,0 +1,28 @@
+<div class="max-w-md mx-auto mt-12">
+  <h1 class="text-3xl font-bold mb-6">
+    Sign up
+  </h1>
+
+  <%= form_with model: @user do |form| %>
+    <div class="mb-4">
+      <%= form.label :email_address, class: "block mb-1" %>
+      <%= form.email_field :email_address,
+          class: "border rounded w-full p-2" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :password, class: "block mb-1" %>
+      <%= form.password_field :password,
+          class: "border rounded w-full p-2" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :password_confirmation, class: "block mb-1" %>
+      <%= form.password_field :password_confirmation,
+          class: "border rounded w-full p-2" %>
+    </div>
+
+    <%= form.submit "Create Account",
+        class: "bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700" %>
+  <% end %>
+</div>
