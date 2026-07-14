@@ -1,0 +1,26 @@
+<div class="text-center py-24">
+
+  <h1 class="text-6xl font-extrabold mb-6">
+    Create Something
+  </h1>
+
+  <p class="text-xl text-stone-600 max-w-2xl mx-auto mb-10">
+    Spend just ten minutes each day making art.
+
+    Everyone receives the same daily prompt.
+    Draw it, paint it, sketch it, then share your work with the community.
+  </p>
+
+  <div class="flex justify-center gap-4">
+
+    <%= link_to "Sign Up",
+        new_user_path,
+        class: "rounded-lg bg-emerald-600 text-white px-6 py-3 hover:bg-emerald-700" %>
+
+    <%= link_to "Log In",
+        new_session_path,
+        class: "rounded-lg border border-stone-300 bg-white px-6 py-3 hover:bg-stone-50" %>
+
+  </div>
+
+</div>
