@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_09_175859) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_22_182420) do
+  create_table "daily_prompts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "medium_id", null: false
+    t.date "prompt_date"
+    t.integer "prompt_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medium_id"], name: "index_daily_prompts_on_medium_id"
+    t.index ["prompt_id"], name: "index_daily_prompts_on_prompt_id"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.boolean "active"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.text "instructions"
+    t.string "title"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "ip_address"
@@ -28,5 +55,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_09_175859) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "daily_prompts", "media"
+  add_foreign_key "daily_prompts", "prompts"
   add_foreign_key "sessions", "users"
 end

@@ -1,25 +1,43 @@
 <div class="space-y-8">
 
-  <div>
-    <p class="uppercase tracking-widest text-sm text-stone-500">
-      Today's Prompt
-    </p>
-
-    <h2 class="text-4xl font-bold mt-2">
-      Prompt coming soon...
-    </h2>
-  </div>
-
   <div class="rounded-xl bg-white p-8 shadow">
+    <div class="space-y-8">
 
-    <p class="text-lg text-stone-700">
-      This is where today's creative prompt will appear.
-    </p>
+      <div>
+        <p class="text-sm uppercase tracking-widest text-stone-500">
+          Today's Prompt
+        </p>
 
-    <p class="mt-6 text-stone-500">
-      Spend ten minutes creating something with whatever materials you have.
-    </p>
+        <h1 class="mt-2 text-4xl font-bold">
+          <%= @prompt.title %>
+        </h1>
+      </div>
 
+      <div class="rounded-xl bg-white shadow p-8">
+
+        <p class="text-lg leading-relaxed">
+          <%= simple_format(@prompt.instructions) %>
+        </p>
+
+        <div class="mt-8 rounded-lg bg-stone-100 p-4">
+          <h2 class="font-semibold text-stone-800">
+            Suggested Medium
+          </h2>
+
+          <p class="mt-2">
+            <strong><%= @medium.name %></strong>
+          </p>
+
+          <p class="mt-1 text-stone-600">
+            <%= @medium.description %>
+          </p>
+
+          <p class="mt-4 text-sm italic text-stone-500">
+            Don't have a <%= @medium.name.downcase %>? Use whatever you have.
+            The goal is to create something today.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-
 </div>
