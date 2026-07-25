@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_22_182420) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_24_232422) do
   create_table "daily_prompts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "medium_id", null: false
@@ -22,7 +22,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_22_182420) do
   end
 
   create_table "media", force: :cascade do |t|
-    t.boolean "active"
     t.datetime "created_at", null: false
     t.text "description"
     t.string "name"
@@ -30,7 +29,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_22_182420) do
   end
 
   create_table "prompts", force: :cascade do |t|
-    t.boolean "active"
     t.string "category"
     t.datetime "created_at", null: false
     t.text "instructions"

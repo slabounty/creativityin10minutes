@@ -18,27 +18,22 @@ media = {}
   {
     name: "Pencil",
     description: "Great for sketching, shading, and experimenting.",
-    active: true
   },
   {
     name: "Pen",
     description: "Commit to your marks and embrace happy accidents.",
-    active: true
   },
   {
     name: "Colored Pencil",
     description: "Add color while keeping the control of drawing.",
-    active: true
   },
   {
     name: "Watercolor",
     description: "Focus on shapes, values, and loose color.",
-    active: true
   },
   {
     name: "Marker",
     description: "Bold shapes and confident lines.",
-    active: true
   }
 ].each do |attributes|
   medium = Medium.find_or_initialize_by(name: attributes[:name])
@@ -59,7 +54,6 @@ prompts = {}
       Ignore the small details and focus on the overall shape.
     TEXT
     category: "Observation",
-    active: true
   },
   {
     title: "Continuous Line",
@@ -68,7 +62,6 @@ prompts = {}
       Don't worry about perfection—just keep the line moving.
     TEXT
     category: "Constraint",
-    active: true
   },
   {
     title: "Bird's-Eye View",
@@ -77,7 +70,6 @@ prompts = {}
       straight down from above.
     TEXT
     category: "Perspective",
-    active: true
   },
   {
     title: "Texture Study",
@@ -86,7 +78,6 @@ prompts = {}
       Use marks and shading to communicate texture.
     TEXT
     category: "Texture",
-    active: true
   },
   {
     title: "Tiny Creature",
@@ -95,7 +86,6 @@ prompts = {}
       a teacup.
     TEXT
     category: "Imagination",
-    active: true
   }
 ].each do |attributes|
   prompt = Prompt.find_or_initialize_by(title: attributes[:title])

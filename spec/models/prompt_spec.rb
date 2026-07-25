@@ -1,8 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Prompt, type: :model do
-  it { respond_to :title }
-  it { respond_to :instructions }
-  it { respond_to :category }
-  it { respond_to :active }
+  let (:prompt) { Prompt.new }
+
+  describe "basic methods" do
+    it "responds to title" do
+      expect(prompt).to respond_to(:title)
+    end
+
+    it "responds to instructions" do
+      expect(prompt).to respond_to(:instructions)
+    end
+
+    it "responds to category" do
+      expect(prompt).to respond_to(:category)
+    end
+  end
 end
