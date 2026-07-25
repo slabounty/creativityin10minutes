@@ -17,23 +17,23 @@ media = {}
 [
   {
     name: "Pencil",
-    description: "Great for sketching, shading, and experimenting.",
+    description: "Great for sketching, shading, and experimenting."
   },
   {
     name: "Pen",
-    description: "Commit to your marks and embrace happy accidents.",
+    description: "Commit to your marks and embrace happy accidents."
   },
   {
     name: "Colored Pencil",
-    description: "Add color while keeping the control of drawing.",
+    description: "Add color while keeping the control of drawing."
   },
   {
     name: "Watercolor",
-    description: "Focus on shapes, values, and loose color.",
+    description: "Focus on shapes, values, and loose color."
   },
   {
     name: "Marker",
-    description: "Bold shapes and confident lines.",
+    description: "Bold shapes and confident lines."
   }
 ].each do |attributes|
   medium = Medium.find_or_initialize_by(name: attributes[:name])
@@ -53,7 +53,7 @@ prompts = {}
       Draw your favorite mug using only straight lines.
       Ignore the small details and focus on the overall shape.
     TEXT
-    category: "Observation",
+    category: "Observation"
   },
   {
     title: "Continuous Line",
@@ -61,7 +61,7 @@ prompts = {}
       Draw your shoe without lifting your drawing tool from the paper.
       Don't worry about perfection—just keep the line moving.
     TEXT
-    category: "Constraint",
+    category: "Constraint"
   },
   {
     title: "Bird's-Eye View",
@@ -69,7 +69,7 @@ prompts = {}
       Choose an everyday object and draw it as if you were looking
       straight down from above.
     TEXT
-    category: "Perspective",
+    category: "Perspective"
   },
   {
     title: "Texture Study",
@@ -77,7 +77,7 @@ prompts = {}
       Draw two objects side by side—one rough and one smooth.
       Use marks and shading to communicate texture.
     TEXT
-    category: "Texture",
+    category: "Texture"
   },
   {
     title: "Tiny Creature",
@@ -85,7 +85,7 @@ prompts = {}
       Invent a creature small enough to live comfortably inside
       a teacup.
     TEXT
-    category: "Imagination",
+    category: "Imagination"
   }
 ].each do |attributes|
   prompt = Prompt.find_or_initialize_by(title: attributes[:title])
