@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @prompt = Prompt.where(active: true).first
-    @medium = Medium.where(active: true).first
+    @prompt = Prompt.first
+    @medium = Medium.first
 
     puts "@prompt = #{@prompt}"
     puts "@medium = #{@medium}"
