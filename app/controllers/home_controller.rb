@@ -1,9 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @prompt = Prompt.first
-    @medium = Medium.first
-
-    puts "@prompt = #{@prompt}"
-    puts "@medium = #{@medium}"
+    @prompt = Prompt.order(Arel.sql("RANDOM()")).first
+    @medium = Medium.order(Arel.sql("RANDOM()")).first
   end
 end
