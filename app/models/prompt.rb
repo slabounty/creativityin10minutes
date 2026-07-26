@@ -4,4 +4,8 @@ class Prompt < ApplicationRecord
   validates :title, presence: true
   validates :instructions, presence: true
   validates :category, presence: true
+
+  def self.random
+    order(Arel.sql("RANDOM()")).first
+  end
 end
