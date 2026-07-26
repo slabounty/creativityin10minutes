@@ -29,7 +29,6 @@ RSpec.describe DailyPrompt, type: :model do
         name: "Pencil",
         description: "Simple graphite pencil."
       )
-
     end
 
     it "creates today's prompt if one does not exist" do
