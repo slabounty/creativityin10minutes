@@ -1,4 +1,5 @@
 require 'rails_helper'
+include ActiveSupport::Testing::TimeHelpers
 
 RSpec.describe Prompt, type: :model do
   let (:prompt) { Prompt.new }

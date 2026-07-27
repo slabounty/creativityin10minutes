@@ -11,4 +11,8 @@ class DailyPrompt < ApplicationRecord
       daily_prompt.medium = Medium.random
     end
   end
+
+  def formatted_date
+    prompt_date.strftime("%A, %B %-d, %Y")
+  end
 end
