@@ -1,4 +1,5 @@
 require "rails_helper"
+include ActiveSupport::Testing::TimeHelpers
 
 RSpec.describe "Home", type: :request do
   let!(:user) do
@@ -10,6 +11,8 @@ RSpec.describe "Home", type: :request do
   end
 
   before do
+    travel_to(Time.parse("2026-07-14"))
+
     Prompt.create!(
       title: "Draw a Mug",
       instructions: "Draw your favorite mug.",
@@ -24,10 +27,19 @@ RSpec.describe "Home", type: :request do
     sign_in(user)
   end
 
-  it "displays the prompt and medium" do
+  it "displays the date, prompt and medium" do
     get home_path
 
     expect(response).to have_http_status(:ok)
+
+    expect(response.body).to include("Today's Prompt")
+
+    # Check that the date is shown.
+    expect(response.body).to include("Tuesday")
+    expect(response.body).to include("July")
+    expect(response.body).to include("14")
+    expect(response.body).to include("2026")
+
     expect(response.body).to include("Draw a Mug")
     expect(response.body).to include("Pencil")
   end
